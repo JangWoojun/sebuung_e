@@ -10,8 +10,8 @@ export default function Footer() {
                         <Image src={logo} alt="SB logo" width={60} height={60}/>
                         <span className="ml-3 text-xl">SEBUUNG_E</span>
                     </a>
-                    <p className="text-sm text-gray-500 sm:ml-6 sm:mt-0 mt-4">© 2020 Tailblocks —
-                        <a href="https://twitter.com/knyttneve" rel="noopener noreferrer" className="text-gray-600 ml-1" target="_blank">@knyttneve</a>
+                    <p className="text-sm text-gray-500 sm:ml-6 sm:mt-0 mt-4">© woojun —
+                        <a href="https://www.instagram.com/wo_ojun06/" rel="noopener noreferrer" className="text-gray-600 ml-1" target="_blank">@wo_ojun</a>
                     </p>
                     <span className="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start">
                         <a className="text-gray-500">
