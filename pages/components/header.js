@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import logo from '/public/logo2.png'
+import logo from '/public/logo3.png'
 import Link from 'next/link';
 
 export default function Header() {
@@ -9,7 +9,7 @@ export default function Header() {
                 <div className="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
                     <Link href="/">
                         <div className="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0">
-                        <Image src={logo} alt="SB logo" width={60} height={60}/>
+                        <Image src={logo} alt="SB logo" width={50} height={50}/>
                         <span className="ml-3 text-xl">SEBUUNG</span>
                         </div>
                     </Link>
