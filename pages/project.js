@@ -27,11 +27,11 @@ export default function Project({projects}) {
       <section className="flex min-h-screen flex-col items-center justify-center text-gray-600 body-font mb-0">
         <div className="container mx-auto px-5 py-24 md:flex-row flex-col items-start">
           <h1 className="text-3xl md:text-3xl lg:text-4xl whitespace-pre-line leading-snug font-bold mb-4 text-left ml-5">
-            {selectedYear}{title}
+            <span className="text-sky-500">{selectedYear}</span>{title}
           </h1> 
-          <div className="flex justify-between w-full max-w-lg mx-auto items-start mt-32">
+          <div className="flex justify-start w-full max-w-lg ml-5 items-start mt-10">
             <div
-              className={`flex items-center justify-center w-1/2 h-12 rounded-full border ${
+              className={`flex items-center justify-center w-1/4 h-12 rounded-full border ${
                 selectedYear === 2023 
                   ? 'bg-blue-500 text-white' 
                   : 'border-gray-300 text-gray-500'
@@ -41,7 +41,7 @@ export default function Project({projects}) {
               <h2 className="text-lg font-medium">2023년</h2>
             </div>
             <div
-              className={`flex items-center justify-center w-1/2 h-12 rounded-full border ${
+              className={`flex items-center justify-center w-1/4 h-12 rounded-full border ${
                 selectedYear === 2022 
                   ? 'bg-blue-500 text-white' 
                   : 'border-gray-300 text-gray-500'
@@ -71,5 +71,5 @@ export async function getServerSideProps(context) {
   });
   return {
     props: { projects: results },
-  };
+  }
 }
