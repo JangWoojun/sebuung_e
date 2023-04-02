@@ -1,4 +1,3 @@
-import Animation from "./animation";
 import logo from '/public/logo2.png'
 import Image from 'next/image'
 
