@@ -4,16 +4,17 @@ import ProjectItem from "./projects/project-item";
 import { useState } from 'react';
 import { NOTION_DATABASE_PROJECTS_ID, NOTION_TOKEN } from "./config";
 
-const title = "년도에 세붕이 멤버들이\n 진행한 프로젝트들을 확인해보세요!"
+const title = "세붕이 멤버들이 진행한\n"
+const tagArr = ["iOS", "Android", "WEB", "모든"]
 
 export default function Project({projects}) {
   console.log(projects)
 
-  const [selectedYear, setSelectedYear] = useState(2023);
-
+  const [selectedType, setSelectedType] = useState(3);
+  
   const filteredProjects = projects.filter(project => {
-    const year = project.properties.기간.number;
-    return year === selectedYear;
+    const type = project.properties.태그.number;
+    return selectedType === 3 || type === selectedType;
   });
 
   return (
@@ -26,29 +27,49 @@ export default function Project({projects}) {
 
       <section className="flex min-h-screen flex-col items-center justify-center text-gray-600 body-font mb-0">
         <div className="container mx-auto px-5 py-24 md:flex-row flex-col items-start">
-          <h1 className="text-3xl md:text-3xl lg:text-4xl whitespace-pre-line leading-snug font-bold mb-4 text-left ml-5">
-            <span className="text-sky-500">{selectedYear}</span>{title}
+          <h1 className="text-3xl md:text-3xl lg:text-4xl whitespace-pre-line leading-snug font-bold mb-4 text-left ml-6">
+              {title}<span className="text-sky-500">{tagArr[selectedType]}</span> 프로젝트들을 확인해보세요!
           </h1> 
-          <div className="flex justify-start w-full max-w-lg ml-5 items-start mt-10">
+          <div className="flex justify-start w-full max-w-lg items-start mt-10">
             <div
               className={`flex items-center justify-center w-1/4 h-12 rounded-full border ${
-                selectedYear === 2023 
+                selectedType === 3
                   ? 'bg-blue-500 text-white' 
                   : 'border-gray-300 text-gray-500'
-              } mr-4 hover:bg-blue-500 hover:text-white transition-all duration-500`}
-              onClick={() => setSelectedYear(2023)}
+              } mr-4 hover:bg-blue-500 hover:text-white transition-all duration-500 ml-5`}
+              onClick={() => setSelectedType(3)}
             >
-              <h2 className="text-lg font-medium">2023년</h2>
+              <h2 className="text-lg font-medium">ALL</h2>
             </div>
             <div
               className={`flex items-center justify-center w-1/4 h-12 rounded-full border ${
-                selectedYear === 2022 
+                selectedType === 0
                   ? 'bg-blue-500 text-white' 
                   : 'border-gray-300 text-gray-500'
-              } hover:bg-blue-500 hover:text-white transition-all duration-500`}
-              onClick={() => setSelectedYear(2022)}
+              } mr-4 hover:bg-blue-500 hover:text-white transition-all duration-500`}
+              onClick={() => setSelectedType(0)}
             >
-              <h2 className="text-lg font-medium">2022년</h2>
+              <h2 className="text-lg font-medium">iOS</h2>
+            </div>
+            <div
+              className={`flex items-center justify-center w-1/4 h-12 rounded-full border ${
+                selectedType === 1
+                  ? 'bg-blue-500 text-white' 
+                  : 'border-gray-300 text-gray-500'
+              } mr-4 hover:bg-blue-500 hover:text-white transition-all duration-500`}
+              onClick={() => setSelectedType(1)}
+            >
+              <h2 className="text-lg font-medium">Android</h2>
+            </div>
+            <div
+              className={`flex items-center justify-center w-1/4 h-12 rounded-full border ${
+                selectedType === 2
+                  ? 'bg-blue-500 text-white' 
+                  : 'border-gray-300 text-gray-500'
+              } mr-4 hover:bg-blue-500 hover:text-white transition-all duration-500`}
+              onClick={() => setSelectedType(2)}
+            >
+              <h2 className="text-lg font-medium">WEB</h2>
             </div>
           </div>
           <div className="mt-16 grid grid-cols-1 md:grid-cols-2">
