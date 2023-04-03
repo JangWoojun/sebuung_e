@@ -9,7 +9,7 @@ export default function ProjectItem({ project }) {
   const type = project.properties.분류.multi_select
 
   return (
-    <a className="bg-white mx-5" href={github}>
+    <a className="bg-white mx-3" href={github}>
       <div className="flex bg-white rounded-md rounded-xl w-full
         transition duration-300 transform border border-gray-300
         hover:scale-105 hover:shadow-lg my-5">
