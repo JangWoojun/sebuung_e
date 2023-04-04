@@ -6,7 +6,8 @@ const nextConfig = {
       "sebuung.s3.ap-northeast-2.amazonaws.com",
       "yt3.googleusercontent.com",
       "play-lh.googleusercontent.com",
-      "dummyimage.com"
+      "dummyimage.com",
+      "avatars.githubusercontent.com"
   ]
   }
 }
