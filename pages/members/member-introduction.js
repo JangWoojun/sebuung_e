@@ -1,7 +1,6 @@
 import Image from "next/image"
 
 export default function MemberIntroduction({ member }) {
-  const year = member.properties.학년.multi_select[0].name
   const content = member.properties.설명.rich_text[0].text.content
   const name = member.properties.이름.title[0].text.content
   const image = member.properties.이미지.url
@@ -12,7 +11,7 @@ export default function MemberIntroduction({ member }) {
 
   return (
     <div className="container px-5 py-24 mx-auto">
-    <div className="flex flex-wrap text-center">
+      <div className="flex flex-wrap text-center">
           <Image width={200} height={200} alt="team" className="flex-shrink-0 rounded-lg w-full h-56 object-cover object-center mb-4" src={image}/>
           <div className="w-full">
             <h2 className="title-font font-bold text-lg text-gray-900 text-sky-500">{name}</h2>
@@ -28,6 +27,7 @@ export default function MemberIntroduction({ member }) {
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm-1.019 10.13c-.282-.293-.268-.751.024-1.035l2.974-2.884c.145-.14.332-.211.517-.211.188 0 .375.073.518.22l-4.033 3.91zm-4.888 7.348c-.062.059-.093.139-.093.218 0 .167.136.304.304.304.076 0 .152-.029.212-.086l.499-.486-.422-.436-.5.486zm4.219-5.617l-1.71 1.657c-.918.891-1.387 1.753-1.819 2.958l.754.779c1.217-.395 2.094-.836 3.013-1.728l1.709-1.658-1.947-2.008zm4.985-5.106l-4.402 4.27 2.218 2.29 4.402-4.269c.323-.314.485-.73.485-1.146 0-1.392-1.687-2.13-2.703-1.145z"/></svg></a>          
             </span>
           </div>
-</div></div>
+      </div>
+    </div>
   );
 }
