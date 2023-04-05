@@ -5,11 +5,11 @@ import MemberIntroduction from "./members/member-introduction";
 import { NOTION_TOKEN, NOTION_DATABASE_MEMBERS_ID } from "./config";
 
 export default function Member({members}) {
-  const [selectedYear, setSelectedYear] = useState(0);
+  const [selectedType, setSelectedType] = useState(0);
 
   const filteredMembers = members.filter(member => {
-    const year = member.properties.타입.number;
-    return year === selectedYear;
+    const type = member.properties.타입.number;
+    return type === selectedType;
   });
 
   return (
@@ -27,21 +27,21 @@ export default function Member({members}) {
           <div className="flex justify-between w-full max-w-lg mx-auto items-start mt-32">
             <button
               className={`flex items-center justify-center w-1/2 h-12 rounded-full border ${
-                selectedYear === 0
+                selectedType === 0
                   ? 'bg-blue-500 text-white' 
                   : 'border-gray-300 text-gray-500'
               } mr-4 hover:bg-blue-500 hover:text-white transition-all duration-500`}
-              onClick={() => setSelectedYear(0)}
+              onClick={() => setSelectedType(0)}
             >
               <h2 className="text-lg font-medium">재학</h2>
             </button>
             <button 
               className={`flex items-center justify-center w-1/2 h-12 rounded-full border ${
-                selectedYear === 1
+                selectedType === 1
                   ? 'bg-blue-500 text-white' 
                   : 'border-gray-300 text-gray-500'
               } hover:bg-blue-500 hover:text-white transition-all duration-500`}
-              onClick={() => setSelectedYear(1)}
+              onClick={() => setSelectedType(1)}
             >
               <h2 className="text-lg font-medium">졸업</h2>
             </button>
