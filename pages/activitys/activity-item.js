@@ -11,7 +11,7 @@ export default function ActivityItem({activity}) {
                 <div className="flex-shrink-0 w-full h-56 overflow-hidden">
                     <Image width={500} height={500} alt="team" className="rounded-lg object-cover object-center" src={image}/>
                 </div>
-                <div className="w-full bg-sky-200">
+                <div className="w-full bg-sky-100">
                     <h2 className="title-font font-bold text-lg text-gray-500 h-20 ml-5 mt-5">{name}</h2>
                     <div className="flex flex-row flex-wrap ml-5 -mt-10 mb-5">
                         {member.map((aMember) => (
