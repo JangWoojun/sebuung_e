@@ -16,6 +16,9 @@ export default function Activity({activity}) {
       return selectedActivity === 3 || type === selectedActivity;
     });
 
+    const count0 = filteredActivity.filter(activity => activity.properties.타입.number === 0).length;
+    const count1 = filteredActivity.filter(activity => activity.properties.타입.number === 1).length;
+
     return (
         <Layout>
             <Head>
@@ -26,7 +29,7 @@ export default function Activity({activity}) {
             <section className="flex min-h-screen flex-col justify-center text-gray-600 body-font mb-0">
                 <div className="container mx-auto px-5 py-24 md:flex-row flex-col items-start">
                 <div className="flex items-center justify-between4">
-                  <div className="ml-5 text-2xl whitespace-pre-line leading-snug font-medium break-keep"><span className="text-6xl font-black text-sky-500">세붕이 멤버활동{n}{n}</span>성장에 대한 열정을 가진 저희 <span className="text-blue-500 font-bold">세붕이 멤버들은</span> 지금까지 <span className="text-blue-500 font-bold">{3}개의 외부 대회</span>에서 수상을 하였고 세붕이 자체적으로 세미나를 개최하여 <span className="text-blue-500 font-bold">총 {5}개의 세미나를 성공적으로</span> 진행했습니다!</div>
+                  <div className="ml-5 text-2xl whitespace-pre-line leading-snug font-medium break-keep"><span className="text-6xl font-black text-sky-500">세붕이 멤버활동{n}{n}</span>성장에 대한 열정을 가진 저희 <span className="text-blue-500 font-bold">세붕이 멤버들은</span> 지금까지 <span className="text-blue-500 font-bold">{count0}개의 외부 대회</span>에서 수상을 하였고 세붕이 자체적으로 세미나를 개최하여 <span className="text-blue-500 font-bold">총 {count1}개의 세미나를 성공적으로</span> 진행했습니다!</div>
                   <Animation />
                 </div>
                 <div className="flex justify-start w-full max-w-lg items-start">
