@@ -7,7 +7,8 @@ const nextConfig = {
       "yt3.googleusercontent.com",
       "play-lh.googleusercontent.com",
       "dummyimage.com",
-      "avatars.githubusercontent.com"
+      "avatars.githubusercontent.com",
+      "cdn.imweb.me"
   ]
   }
 }
